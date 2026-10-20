@@ -2,18 +2,22 @@
 <html>
     <head>
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Asap+Sharp:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Rock Paper Scissors</h1>
-        <button onclick="playGame('rock')">Rock</button>
-        <button onclick="playGame('paper')">Paper</button>
-        <button onclick="playGame('scissors')">Scissors</button>
+        <h1 class="title">Rock Paper Scissors</h1>
+        <button class="move-button rock-button" onclick="playGame('rock')"><img class="move-icon" src="images/rock.png"></button>
+        <button class="move-button paper-button" onclick="playGame('paper')"><img class="move-icon" src="images/paper.png"></button>
+        <button class="move-button scissors-button" onclick="playGame('scissors')"><img src="images/scissors.png" class="move-icon"></button>
 
-        <p class="js-result"></p>
-        <p class="js-moves"></p>  
-        <p class="js-score"></p>
-
-        <button onclick="resetScore()">Reset Score</button>
+        <p class="js-result result"></p>
+        <p class="js-moves moves"></p>  
+        <p class="js-score score"></p>
+ 
+        <button class="reset-score-button" onclick="resetScore()">Reset Score</button>
 
         <script>
             let score = JSON.parse(localStorage.getItem('score')) || {
@@ -63,7 +67,7 @@
                 localStorage.setItem('score', JSON.stringify(score))
                 updateScoreElement();
                 document.querySelector('.js-result').innerHTML = `${result}`;
-                document.querySelector('.js-moves').innerHTML = `You ${playerMove} - Computer ${computerMove}`;
+                document.querySelector('.js-moves').innerHTML = `You <img class="move-icon moves" src="images/${playerMove}.png"> <img class="move-icon moves" src="images/${computerMove}.png"> Computer`;
                 updateMovesElement(playerMove, computerMove);
             }
 

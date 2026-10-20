@@ -1,5 +1,8 @@
 body{
     font-family: "Asap Sharp",Arial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .title{
     font-weight: bold;
@@ -46,4 +49,5 @@ body{
     padding: 8px 15px;
     cursor: pointer;
     border-radius: 4px;
+    width: fit-content;
 }

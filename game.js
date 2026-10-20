@@ -46,7 +46,6 @@ function playGame(playerMove){
     updateScoreElement();
     document.querySelector('.js-result').innerHTML = `${result}`;
     document.querySelector('.js-moves').innerHTML = `You <img class="move-icon moves" src="images/${playerMove}.png"> <img class="move-icon moves" src="images/${computerMove}.png"> Computer`;
-    updateMovesElement(playerMove, computerMove);
 }
 
 function resetScore(){
